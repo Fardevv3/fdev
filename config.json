@@ -1,0 +1,20 @@
+{
+	"owner": ["18312576749@s.whatsapp.net"],
+	"thumbvideo": "https://uploader.caliph.my.id/file/hU0F0HZ9K4.mp4",
+	"thumb": "https://telegra.ph/file/65a1a49741fdb2aa7883f.png",
+	"session": "session.json",
+	"ownername": "Fdev78",
+	"self": false,
+	"server": false,
+	"comment_server": "change 'server' with 'true', if you run in replit!",
+	"limit": { "limitUser": 100, "gameLimitUser": 100, "gameLimitPremium": 30 },
+	"packInfo": { "packname": "© Fdev", "author": "18312576749" },
+	"namebot": "Fdev-Bot",
+	"timezone": "Asia/Jakarta",
+	"email": "farrrgf300@gmail.com",
+	"instagram": "https://instagram.com/fardev78",
+	"locale": "id",
+	"ignore": {
+		"directory": ["umum"]
+	}
+}
