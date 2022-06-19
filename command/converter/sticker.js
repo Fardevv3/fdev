@@ -5,18 +5,11 @@ const fs = require("fs");
 module.exports = {
 	name: "sticker",
 	alias: [
-		"s",
-		"stick",
-		"stik",
-		"stiker",
-		"take",
-		"swm",
+	  "s",
+		"sticker",
 		"stickerwm",
+		"take",
 		"wm",
-		"stickergif",
-		"stikergif",
-		"gifstiker",
-		"gifsticker",
 	],
 	category: "converter",
 	desc: "Create a sticker from image or video",
@@ -48,14 +41,14 @@ module.exports = {
 			} else if ((isMedia && !msg.message.videoMessage) || isQImg) {
 				buffer = isQImg ? await quoted.download() : await msg.download();
 				stickerBuff = await sticker(buffer, { isImage: true, withPackInfo: true, packInfo, cmdType: "1" });
-				await conn.sendMessage(from, { sticker: stickerBuff }, { quoted: msg });
+				await conn.sendMessage(from, { sticker: stickerBuff }, { quoted: msg , adReply : true});
 			} else if (
 				(isMedia && msg.message.videoMessage.fileLength < 2 << 20) ||
 				(isQVid && quoted.message.videoMessage.fileLength < 2 << 20)
 			) {
 				buffer = isQVid ? await quoted.download() : await msg.download();
 				stickerBuff = await sticker(buffer, { isVideo: true, withPackInfo: true, packInfo, cmdType: "1" });
-				await conn.sendMessage(from, { sticker: stickerBuff }, { quoted: msg });
+				await conn.sendMessage(from, { sticker: stickerBuff }, { quoted: msg , adReply : true});
 			} else if (
 				isQDoc &&
 				(/image/.test(quoted.message.documentMessage.mimetype) ||
@@ -70,14 +63,14 @@ module.exports = {
 				if (!ext) return await msg.reply("Document mimetype unknown");
 				buffer = await quoted.download();
 				stickerBuff = await sticker(buffer, { ...ext, withPackInfo: true, packInfo, cmdType: "1" });
-				await conn.sendMessage(from, { sticker: stickerBuff }, { quoted: msg });
+				await conn.sendMessage(from, { sticker: stickerBuff }, { quoted: msg , adReply : true});
 			} else {
-				await msg.reply(`reply sticker`);
+				await msg.reply(`reply image`);
 			}
 			(buffer = null), (stickerBuff = null);
 		} catch (e) {
 			console.log(e);
-			await msg.reply("Error while creating sticker");
+			await msg.reply("Error while creating sticker\n\n" + e);
 		}
 	},
 };
