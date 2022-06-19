@@ -106,10 +106,11 @@ ${
 					gifPlayback: true,
 					footer: config.namebot + " • " + config.ownername,
 					templateButtons: [
-						{ urlButton: { displayText: "Instagram", url: "https://Instagram.com/fardev78" } },
-						{ urlButton: { displayText: "Contact owner", url: "https://wa.me/18312576749" } },
-						{ quickReplyButton: { displayText: "Pemilik bot", id: "#owner" } },
-						{ quickReplyButton: { displayText: "Statistic", id: "#db" } },
+						{ urlButton: { displayText: "Shortlink", url: "https://fedv.my.id" } },
+						{ urlButton: { displayText: "Instagram", url: "https://instagram/fardev78" } },
+						{ quickReplyButton: { displayText: "Pmeilik bot", id: "#owner" } },
+						{ quickReplyButton: { displayText: "Changelog📋", id: "#changelog" } },
+						{ quickReplyButton: { displayText: "Dashboard📊", id: "#db" } },
 					],
 				},
 				{ quoted: msg }
